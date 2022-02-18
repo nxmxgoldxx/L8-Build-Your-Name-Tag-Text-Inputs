@@ -14,7 +14,7 @@ updateName = (event) => this.setState({ name: event.target.value });
 render() {
     return (
         <form onSubmit={this.handleSubmit}>
-         {consolse.log(this.state)}
+         {console.log(this.state)}
             <input
              type="text" 
              placeholder="Add a new name here..."
