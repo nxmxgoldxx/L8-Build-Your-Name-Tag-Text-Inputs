@@ -1,25 +1,20 @@
 import React, { Component } from "react";
 
 class UserInput extends Component {
-
-state = {
+    state = {
     name: ""
+    };
+
+updateName = (event) => this.setState({ name: event.target.value }); 
+    handleSubmit = (e) => {
+    event.preventDefault();
+    this.props.addName(this.state.name);
+    this.setState({name: ""});
 };
-
-updateName = (e) => {
-    this.setState({ name: e.target.value });
-};
-
-
-handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({name: ""})
-};
-
-
 render() {
     return (
-        <form> 
+        <form onSubmit={this.handleSubmit}>
+         {consolse.log(this.state)}
             <input
              type="text" 
              placeholder="Add a new name here..."
